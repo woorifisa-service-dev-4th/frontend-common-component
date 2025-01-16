@@ -32,8 +32,11 @@ AccordionProvider
  ├── AccordionItem
 ```
 
+<br>
+
 <img width="522" alt="스크린샷 2025-01-16 오후 5 33 58" src="https://github.com/user-attachments/assets/b17bbc87-8739-4d49-bde6-4cd8f4d5fa7d" />
 
+<br>
 <br>
 
 ## 💡 APP.jsx
