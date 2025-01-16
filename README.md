@@ -32,13 +32,12 @@ AccordionProvider
  ├── AccordionItem
 ```
 
-<br>
+<br><br>
 
 <img width="497" alt="스크린샷 2025-01-16 오후 5 35 32" src="https://github.com/user-attachments/assets/b2c7dc49-81a3-4460-96a0-f3b91229f69e" />
 
 
-<br>
-<br>
+<br><br>
 
 ## 💡 APP.jsx
 <img width="421" alt="스크린샷 2025-01-16 오후 5 24 12" src="https://github.com/user-attachments/assets/ef7f8243-e0f4-4b11-b7ff-b21603dec670" />
