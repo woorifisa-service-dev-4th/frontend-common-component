@@ -1,7 +1,12 @@
+import React from "react";
 import DefaultLayout from "./layouts/DefaultLayout";
+import TodoHeader from "./components/todos/TodoHeader";
+import TodoBody from "./components/todos/TodoBody";
 import Modal from "./components/ui/Modal";
-import Form from "./components/Form";
-import { ModalProvider } from "./contexts/ModalContext";
+import WelcomeTooltip from "./components/WelcomeTooltip";
+import { TodoProvider } from "./contexts/TodoContext";
+import TodoForm from "./components/todos/TodoForm";
+import TodoFilter from "./components/todos/TodoFilter";
 import AccordionProvider from "./contexts/AccordionContext";
 import AccordionItem from "./components/ui/AccordionItem";
 
@@ -27,19 +32,33 @@ function App() {
           </h1>
         </header>
 
-        <section className="max-w-xl m-4 mx-auto justify-center items-center flex flex-col">
-          <ModalProvider>
-            <Modal>
-              <Modal.Open>
-                <button className="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[248px] h-12 relative gap-2.5 px-5 py-3.5 rounded-lg bg-black border border-black text-white">
-                  OPEN MODAL
-                </button>
-              </Modal.Open>
-              <Modal.Content>
-                <Form />
-              </Modal.Content>
-            </Modal>
-          </ModalProvider>
+        <section className="max-w-xl m-4 mx-auto">
+          <TodoProvider>
+            <TodoHeader>
+              <Modal>
+                <Modal.Open>
+                  <button className="px-6 py-2 font-semibold text-gray-100 bg-gray-800 border-none rounded cursor-pointer">
+                    사용법
+                  </button>
+                </Modal.Open>
+                <Modal.Content>
+                  <WelcomeTooltip />
+                </Modal.Content>
+              </Modal>
+              <Modal>
+                <Modal.Open>
+                  <button className="px-6 py-2 mr-20 font-semibold text-gray-100 bg-gray-800 border-none rounded cursor-pointer">
+                    ADD TODO
+                  </button>
+                </Modal.Open>
+                <Modal.Content>
+                  <TodoForm>TODO 등록</TodoForm>
+                </Modal.Content>
+              </Modal>
+              <TodoFilter />
+            </TodoHeader>
+            <TodoBody />
+          </TodoProvider>
           <AccordionProvider>
             <AccordionItem />
           </AccordionProvider>
