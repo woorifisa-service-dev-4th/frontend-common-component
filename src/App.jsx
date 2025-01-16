@@ -7,8 +7,6 @@ import WelcomeTooltip from "./components/WelcomeTooltip";
 import { TodoProvider } from "./contexts/TodoContext";
 import TodoForm from "./components/todos/TodoForm";
 import TodoFilter from "./components/todos/TodoFilter";
-import AccordionProvider from "./contexts/AccordionContext";
-import AccordionItem from "./components/ui/AccordionItem";
 
 function App() {
   return (
@@ -59,9 +57,6 @@ function App() {
             </TodoHeader>
             <TodoBody />
           </TodoProvider>
-          <AccordionProvider>
-            <AccordionItem />
-          </AccordionProvider>
         </section>
       </DefaultLayout>
     </>

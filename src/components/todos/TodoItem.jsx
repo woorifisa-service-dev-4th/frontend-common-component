@@ -12,15 +12,9 @@ const TodoItem = ({ todo }) => {
   const dispatch = useContext(TodoDispatchContext);
 
   return (
-    <li className="flex gap-4 justify-between my-4 py-4 px-4 border-[1px] bg-gray-700 rounded-md shadow-xl">
+    <li className="flex gap-4 justify-between py-4 px-4 bg-gray-700 rounded-md">
       <div>
-        <span className="text-lg font-medium text-gray-300">
-          {TODO_CATEGORY_ICON[todo.category]}
-        </span>
         <div>
-          <h2 data-test="title" className="mb-0 text-lg font-bold text-gray-100 uppercase">
-            {todo.title}
-          </h2>
           <p className="mt-2 text-base text-gray-200">{todo.summary}</p>
           <p className="mt-2 text-base text-gray-400">{todo.date}</p>
         </div>
