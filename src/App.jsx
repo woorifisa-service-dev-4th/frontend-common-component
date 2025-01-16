@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import DefaultLayout from "./layouts/DefaultLayout";
+import Modal from "./components/ui/Modal";
+import Form from "./components/Form";
+import { ModalProvider } from "./contexts/ModalContext";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <DefaultLayout>
+        <header>
+          <h1 className="pt-8 mx-auto text-red-200 max-w-max text-7xl">
+            <img
+              className="ml-4"
+              src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Thought%20Balloon.png"
+              alt="Thought Balloon"
+              width="75"
+              height="75"
+            />
+            <img
+              src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Seal.png"
+              alt="Seal"
+              width="75"
+              height="75"
+            />
+          </h1>
+        </header>
+
+        <section className="max-w-xl m-4 mx-auto justify-center items-center flex">
+          <ModalProvider>
+            <Modal>
+              <Modal.Open>
+                <button className="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[248px] h-12 relative gap-2.5 px-5 py-3.5 rounded-lg bg-black border border-black text-white">
+                  OPEN MODAL
+                </button>
+              </Modal.Open>
+              <Modal.Content>
+                <Form />
+              </Modal.Content>
+            </Modal>
+          </ModalProvider>
+        </section>
+      </DefaultLayout>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
