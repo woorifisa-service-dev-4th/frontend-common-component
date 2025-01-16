@@ -1,37 +1,49 @@
-import React, { cloneElement, useState } from "react";
+import React, { useState, cloneElement, Children } from "react";
 import { createPortal } from "react-dom";
-import { useModalState, useModalDispatch } from "../../contexts/ModalContext";
 
 const Modal = ({ children }) => {
-  return <>{children}</>;
-};
+  const [isOpen, setIsOpen] = useState(false);
 
-Modal.Open = ({ children }) => {
-  const { openModal } = useModalDispatch();
-  return cloneElement(children, {
-    onClick: openModal,
-  });
-};
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
-Modal.Content = ({ children }) => {
-  const isOpen = useModalState();
-  const { closeModal } = useModalDispatch();
-
-  if (!isOpen) return null;
-
-  return createPortal(
+  return (
     <>
-      <div
-        onClick={closeModal}
-        data-cy="modal-backdrop"
-        className="fixed top-0 left-0 w-full h-full backdrop-blur-md z-1"
-      ></div>
-      <div className="fixed z-10 w-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-        <div>{children}</div>
-      </div>
-    </>,
-    document.body
+      {Children.map(children, (child) => {
+        if (child.type === Modal.Open) {
+          return cloneElement(child, { openModal });
+        }
+
+        if (child.type === Modal.Content && isOpen) {
+          return createPortal(
+            <div className="fixed inset-0 z-50 flex items-center justify-center">
+              {/* 배경 */}
+              <div
+                className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
+                onClick={closeModal}
+              ></div>
+
+              {/* 모달 콘텐츠 */}
+              <div className="fixed z-10 w-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                {cloneElement(child, { closeModal })}
+              </div>
+            </div>,
+            document.body
+          );
+        }
+
+        return null;
+      })}
+    </>
   );
+};
+
+Modal.Open = ({ children, openModal }) => {
+  return cloneElement(children, { onClick: openModal });
+};
+
+Modal.Content = ({ children, closeModal }) => {
+  return <>{cloneElement(children, { onClose: closeModal })}</>;
 };
 
 export default Modal;
