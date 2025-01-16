@@ -2,6 +2,8 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import Modal from "./components/ui/Modal";
 import Form from "./components/Form";
 import { ModalProvider } from "./contexts/ModalContext";
+import AccordionProvider from "./contexts/AccordionContext";
+import AccordionItem from "./components/ui/AccordionItem";
 
 function App() {
   return (
@@ -25,7 +27,7 @@ function App() {
           </h1>
         </header>
 
-        <section className="max-w-xl m-4 mx-auto justify-center items-center flex">
+        <section className="max-w-xl m-4 mx-auto justify-center items-center flex flex-col">
           <ModalProvider>
             <Modal>
               <Modal.Open>
