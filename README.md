@@ -1,6 +1,6 @@
 # TODO에 Compound Component 적용하기
 
-TODO에 Compound Component Modal, Accordion을 적용
+✏️ TODO에 Compound Component Modal, Accordion을 적용
 
 <br>
 
@@ -34,7 +34,8 @@ AccordionProvider
 <br>
 
 ## 💡 APP.jsx
-<img width="299" alt="스크린샷 2025-01-16 오후 4 47 17" src="https://github.com/user-attachments/assets/e6769a83-b771-43a5-a6d4-c4c866a08e13" />
+<img width="421" alt="스크린샷 2025-01-16 오후 5 24 12" src="https://github.com/user-attachments/assets/ef7f8243-e0f4-4b11-b7ff-b21603dec670" />
+
 
 <br>
 <br>
