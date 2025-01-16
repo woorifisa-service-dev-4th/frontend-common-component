@@ -35,7 +35,7 @@ AccordionProvider
 <br><br>
 
 <img width="497" alt="스크린샷 2025-01-16 오후 5 35 32" src="https://github.com/user-attachments/assets/b2c7dc49-81a3-4460-96a0-f3b91229f69e" />
-
+[LINK](http://192.168.0.90:4173/)
 
 <br><br>
 
