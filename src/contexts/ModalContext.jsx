@@ -23,7 +23,7 @@ export const ModalProvider = ({ children }) => {
 export const useModalState = () => {
   const context = useContext(ModalStateContext);
   if (context === undefined) {
-    throw new Error("useModalState must be used within a ModalProvider");
+    throw new Error("Error");
   }
   return context;
 };
@@ -32,7 +32,7 @@ export const useModalState = () => {
 export const useModalDispatch = () => {
   const context = useContext(ModalDispatchContext);
   if (context === undefined) {
-    throw new Error("useModalDispatch must be used within a ModalProvider");
+    throw new Error("Error");
   }
   return context;
 };

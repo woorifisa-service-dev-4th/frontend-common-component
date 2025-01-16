@@ -3,27 +3,6 @@ import AccordionItem from "../components/ui/AccordionItem";
 
 const AccordionContext = createContext();
 
-const dummyTodos = [
-  {
-    id: 1,
-    title: "React 공부",
-    content: "React를 공부한다.",
-    category: "TODO",
-  },
-  {
-    id: 2,
-    title: "점심 먹기",
-    content: "점심을 먹는다.",
-    category: "PROGRESS",
-  },
-  {
-    id: 3,
-    title: "커피 마시기",
-    content: "커피를 마신다.",
-    category: "DONE",
-  },
-];
-
 // useContext로 AccordionContext를 가져옴
 export function useAccordionContext() {
   const context = useContext(AccordionContext);
@@ -33,9 +12,9 @@ export function useAccordionContext() {
   return context;
 }
 
-export default function AccordionProvider({ className }) {
-  const [openItemId, setOpenItemId] = useState();
-  const [todos, setTodos] = useState(dummyTodos);
+export function AccordionProvider({ children, className }) {
+  const [openItemId, setOpenItemId] = useState(null);
+  const [todos, setTodos] = useState([]);
 
   // id를 인자로 받아 토글하는 기능 함수
   function toggleItem(id) {
@@ -58,6 +37,9 @@ export default function AccordionProvider({ className }) {
           </AccordionItem>
         ))}
       </ul>
+      {children}
     </AccordionContext.Provider>
   );
 }
+
+export { AccordionContext };
