@@ -1,6 +1,6 @@
 # TODO에 Compound Component 적용하기
 
-✏️ TODO에 Compound Component Modal, Accordion을 적용
+✏️ Context API를 활용히여 Modal, Accordion을 구현하고 TODO 웹에 적용
 
 <br>
 
