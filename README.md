@@ -2,6 +2,8 @@
 
 TODO에 Compound Component Modal, Accordion을 적용
 
+<br>
+
 ## 👨‍💻 팀원 소개
 | 임지섭 | 윤선영 |
 | --- | --- |
@@ -34,6 +36,7 @@ AccordionProvider
 ## 💡 APP.jsx
 <img width="299" alt="스크린샷 2025-01-16 오후 4 47 17" src="https://github.com/user-attachments/assets/e6769a83-b771-43a5-a6d4-c4c866a08e13" />
 
+<br>
 <br>
 <br>
 
