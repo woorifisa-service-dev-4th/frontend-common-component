@@ -38,6 +38,9 @@ function App() {
               </Modal.Content>
             </Modal>
           </ModalProvider>
+          <AccordionProvider>
+            <AccordionItem />
+          </AccordionProvider>
         </section>
       </DefaultLayout>
     </>
