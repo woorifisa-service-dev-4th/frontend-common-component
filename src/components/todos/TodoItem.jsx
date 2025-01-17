@@ -15,7 +15,10 @@ const TodoItem = ({ todo }) => {
     <li className="flex gap-4 justify-between py-4 px-4 bg-gray-700 rounded-md">
       <div>
         <div>
-          <p className="mt-2 text-base text-gray-200">{todo.summary}</p>
+          <p
+            className="mt-2 text-base text-gray-200"
+            dangerouslySetInnerHTML={{ __html: todo.summary }}
+          ></p>
           <p className="mt-2 text-base text-gray-400">{todo.date}</p>
         </div>
       </div>
