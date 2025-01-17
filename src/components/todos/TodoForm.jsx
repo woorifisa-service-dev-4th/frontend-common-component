@@ -36,9 +36,10 @@ const TodoForm = ({ onClose, children, todo }) => {
   }
 
   const addTodoHandler = () => {
+    const formattedSummary = summary.replace(/\n/g, '<br>');
     dispatch({
       type: "ADD",
-      newTodo: { id: generateUUID(), title, summary, category, date },
+      newTodo: { id: generateUUID(), title, summary:formattedSummary, category, date },
     });
     onClose();
   };
